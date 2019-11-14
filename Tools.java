@@ -158,6 +158,13 @@ public class Tools {
                     }
                 }, null);
     }
+    
+    
+    
+       public static boolean checkGPSStatus(Context context) {
+        LocationManager manager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        return manager.isProviderEnabled(LocationManager.GPS_PROVIDER) || manager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+    }
 
 
 }

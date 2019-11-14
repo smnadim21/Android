@@ -1,9 +1,9 @@
-package com.vios.doctor.tools;
+package com.Application.doctor.tools;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.vios.doctor.app.ViosDoctor;
+import com.app.Application;
 
 
 // Local data library created by nadim
@@ -11,7 +11,7 @@ import com.vios.doctor.app.ViosDoctor;
 public class LocalData {
 
 
-    private static final String PREFS_NAME = "viosdoctor";
+    private static final String PREFS_NAME = "Applicationdoctor";
 
     private static final String EXAMPLE = "abskldjfiors";
     private static final String FIRSTLOGIN = "odfjsdopad";
@@ -22,63 +22,63 @@ public class LocalData {
 
 
     public static boolean setPreference(String key, String value) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putString(key, value);
         return editor.commit();
     }
 
     public static String getPreference(String key) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         return settings.getString(key, "none");
     }
 
     public static boolean setPreferenceInt(String key, int value) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putInt(key, value);
         return editor.commit();
     }
 
     public static int getPreferenceInt(String key) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         return settings.getInt(key, 0);
     }
 
     public static boolean setPreferenceLong(String key, Long value) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = ApplicationDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putLong(key, value);
         return editor.commit();
     }
 
     public static Long getPreferenceLong(String key) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         return settings.getLong(key,0L);
     }
 
     public static boolean setPreferenceFloat(String key, Float value) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putFloat(key, value);
         return editor.commit();
     }
 
     public static Float getPreferenceFloat(String key) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         return settings.getFloat(key,0f);
     }
 
 
     public static boolean setPreferenceBool(String key, Boolean value) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean(key, value);
         return editor.commit();
     }
 
     public static boolean getPreferenceBool(String key) {
-        SharedPreferences settings = ViosDoctor.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences settings = Application.getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         return settings.getBoolean(key, false);
     }
 

@@ -165,6 +165,39 @@ public class Tools {
         LocationManager manager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
         return manager.isProviderEnabled(LocationManager.GPS_PROVIDER) || manager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
+    
+    
+       public static void sendMessageToActivity(Context context, String nIntent, String nExtra, String msg) {
+        Intent intent = new Intent(nIntent);
+        intent.putExtra(nExtra, msg);
+        // You can also include some extra data.
+       /* intent.putExtra("Status", msg);
+        Bundle b = new Bundle();
+        b.putParcelable("Location", l);*/
+        //intent.putExtra("Location", b);
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
+       }
+    
+    
+            broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.e("broadcast", "loginStatus received");
+                Log.e("broadcast", String.valueOf(intent.getStringExtra(INTENT_EXTRA_LOGIN_UPDATES)));
+
+                //if(intent != null)
+
+                switch (intent.getStringExtra(INTENT_EXTRA_LOGIN_UPDATES)) {
+                  
+                }
+
+            }
+        };
+
+        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver, new IntentFilter(INTENT_LOGIN_UPDATES));
+    
+           
+       
 
 
 }
